@@ -21,7 +21,7 @@ namespace EvaluationSampleTest.UnitTests
 
         [TestMethod]
 
-        public void GetOutput_WhenListIsNotEmpty_ReturnNumber()
+        public void Count_WhenListIsNotEmpty_ReturnNumber()
         {
             var result = _customstack.Count();
 
@@ -31,7 +31,7 @@ namespace EvaluationSampleTest.UnitTests
         [TestMethod]
         [DataRow(1)]
         [DataRow(5)]
-        public void GetOutput_WhenValue_PushInList(int iteration)
+        public void Push_WhenValue_PushInList(int iteration)
         {
             var expectedResult = _customstack.Count() + iteration;
 
@@ -48,7 +48,7 @@ namespace EvaluationSampleTest.UnitTests
         }
 
         [TestMethod]
-        public void GetOutput_WhenListIsUnder0_ThrowsArgumentException()
+        public void Pop_WhenListIsUnder0_ThrowsArgumentException()
         {
 
             var _customstack2 = new CustomStack();
@@ -58,12 +58,15 @@ namespace EvaluationSampleTest.UnitTests
         }
 
         [TestMethod]
-        public void GetOutput_WhenPop_ReturnElementPopped()
+        public void Pop_WhenPop_ReturnElementPopped()
         {
-
+            var _customstack2 = new CustomStack();
+            _customstack.Push(1);
+            _customstack.Push(2);
+            _customstack.Push(3);
             var result = _customstack.Pop();
 
-            Assert.AreEqual(2, result);
+            Assert.AreEqual(3, result);
         }
     }
 }

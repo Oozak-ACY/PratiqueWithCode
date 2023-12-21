@@ -20,7 +20,7 @@ namespace EvaluationSampleTest.UnitTests
 
         [TestMethod]
 
-        public void GetOutput_WhenContentEqualSaucisse_ReturnBoldSaucisse()
+        public void GetBoldFormat_WhenContentEqualSaucisse_ReturnBoldSaucisse()
         {
             var result = _formater.GetBoldFormat("Saucisse");
 
@@ -29,7 +29,7 @@ namespace EvaluationSampleTest.UnitTests
 
         [TestMethod]
 
-        public void GetOutput_WhenContentEqualSaucisse_ReturnItalicBurger()
+        public void GetItalicFormat_WhenContentEqualSaucisse_ReturnItalicBurger()
         {
             var result = _formater.GetItalicFormat("Burger");
 
@@ -38,7 +38,7 @@ namespace EvaluationSampleTest.UnitTests
 
         [TestMethod]
 
-        public void GetOutput_WhenContentsInAList_ReturnHtmlFormatString()
+        public void GetFormattedListElements_WhenContentsInAList_ReturnHtmlFormatString()
         {
             List<string> contents_list = new List<string>();
             contents_list.Add("Pain");
