@@ -31,7 +31,7 @@ namespace EvaluationSampleTest.UnitTests
         }
 
         [TestMethod]
-        public void GetOutput_WhenReservationIsCancelledByGoodUser_ReturnTrue()
+        public void CanBeCancelledBy_WhenReservationIsCancelledByGoodUser_ReturnTrue()
         {
             // Act
             var result = _reservation.CanBeCancelledBy(_user);
@@ -41,7 +41,7 @@ namespace EvaluationSampleTest.UnitTests
         }
 
         [TestMethod]
-        public void GetOutput_WhenReservationIsCancelledByNotGoodUser_ReturnFalse()
+        public void CanBeCancelledBy_WhenReservationIsCancelledByNotGoodUser_ReturnFalse()
         {
             _notGoodUser.IsAdmin = false;
             // Act
@@ -52,7 +52,7 @@ namespace EvaluationSampleTest.UnitTests
         }
 
         [TestMethod]
-        public void GetOutput_WhenReservationIsCancelledByAdminUser_ReturnTrue()
+        public void CanBeCancelledBy_WhenReservationIsCancelledByAdminUser_ReturnTrue()
         {
             _notGoodUser.IsAdmin = true;
             // Act

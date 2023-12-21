@@ -22,7 +22,7 @@ namespace EvaluationSampleTest.UnitTests
         [DataRow(2, 2, 4)]
         [DataRow(1, 20, 21)]
         [DataRow(-2, 2, 0)]
-        public void GetOutput_WhenNumbersAreAdditionned(int number1, int number2, int expectedResult)
+        public void Add_WhenNumbersAreAdditionned(int number1, int number2, int expectedResult)
         {
             var result = _operations.Add(number1, number2);
 
@@ -34,7 +34,7 @@ namespace EvaluationSampleTest.UnitTests
         [DataRow(10, 2, 5)]
         [DataRow(-300, 2, -150)]
 
-        public void GetOutput_WhenNumbersAreDivided(int number1, int number2, int expectedResult)
+        public void Divide_WhenNumbersAreDivided(int number1, int number2, int expectedResult)
         {
             var result = _operations.Divide(number1, number2);
 
@@ -45,7 +45,7 @@ namespace EvaluationSampleTest.UnitTests
         [DataRow(10, 0)]
         [DataRow(18, 0)]
         [DataRow(400, 0)]
-        public void GetOutput_WhenNumber2Is0_ThrowsArgumentException(int number1, int number2)
+        public void Divide_WhenNumber2Is0_ThrowsArgumentException(int number1, int number2)
         {
             // Act & Assert
             Assert.ThrowsException<ArgumentException>(() => _operations.Divide(number1, number2));
@@ -55,7 +55,7 @@ namespace EvaluationSampleTest.UnitTests
         [DataRow(-1)]
         [DataRow(-6)]
         [DataRow(-400)]
-        public void GetOutput_WhenNumberIsUnder0_ThrowsArgumentException(int limit)
+        public void GetOddNumbers_WhenNumberIsUnder0_ThrowsArgumentException(int limit)
         {
             // Act & Assert
             Assert.ThrowsException<ArgumentException>(() => _operations.GetOddNumbers(limit));
@@ -66,7 +66,7 @@ namespace EvaluationSampleTest.UnitTests
         [DataRow(6)]
         [DataRow(400)]
 
-        public void GetOutput_WhenNumbersAreDivided(int limit)
+        public void GetOddNumbers_WhenNumbersAreDivided(int limit)
         {
             List<int> notExpectedResult = new List<int>();
             var result = _operations.GetOddNumbers(limit);
